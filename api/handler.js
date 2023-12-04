@@ -2,7 +2,7 @@
 //   https://github.com/jozsefsallai/vercel-vanityurls/tree/master
 
 function buildHTML(path, repo) {
-  console.log(path, repo);
+  const trimmedRepo = repo.replace("https://", "");
   return [
     "<!doctype html>",
     "<html>",
@@ -10,10 +10,10 @@ function buildHTML(path, repo) {
     `<title>${path}</title>`,
     `<meta name="go-import" content="${path} git ${repo}">`,
     `<meta name="go-source" content="${path} _ ${repo}/tree/main{/dir} ${repo}/blob/main{/dir}/{file}#L{line}">`,
-    `<meta http-equiv="refresh" content="0; url=https://pkg.go.dev/${repo}" />`,
+    `<meta http-equiv="refresh" content="0; url=https://pkg.go.dev/${trimmedRepo}" />`,
     "</head>",
     "<body>",
-    `<a href="https://pkg.go.dev/${repo}">Redirecting to documentations...</a>`,
+    `<a href="https://pkg.go.dev/${trimmedRepo}">Redirecting to documentations...</a>`,
     "</body>",
     "</html>",
     "",
