@@ -10,6 +10,7 @@ function buildHTML(path, repo) {
     `<title>${path}</title>`,
     `<meta name="go-import" content="${path} git ${repo}">`,
     `<meta name="go-source" content="${path} _ ${repo}/tree/main{/dir} ${repo}/blob/main{/dir}/{file}#L{line}">`,
+    `<meta http-equiv="refresh" content="0;url=${repo}" />`,
     "</head>",
     "<body>",
     path,
