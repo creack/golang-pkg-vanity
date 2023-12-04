@@ -34,6 +34,7 @@ module.exports = (req, resp) => {
     return resp.end();
   }
 
+  const username = "creack";
   const path = `${req.headers.host}/${pkg}`;
   const repo = `https://github.com/${username}/${pkg}`;
   return resp.send(buildHTML(path, repo));
