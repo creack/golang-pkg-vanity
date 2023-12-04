@@ -16,7 +16,8 @@ function buildHTML(path, repo) {
     path,
     "</body>",
     "</html>",
-  ].join("");
+    "",
+  ].join("\n");
 }
 
 function getPackageName(url) {
