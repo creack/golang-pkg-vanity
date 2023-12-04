@@ -32,7 +32,7 @@ module.exports = (req, resp) => {
 
   const pkg = getPackageName(req.url);
   if (!pkg || !pkg.length) {
-    resp.writeHead(400);
+    resp.writeHead(204);
     return resp.end();
   }
 
